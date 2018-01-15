@@ -1,0 +1,22 @@
+#!/bin/sh
+
+ngrid=`cat nsprobnum | head -n 1 | sed "s/\([0-9]*\),\([0-9]*\)/\2/g"`
+n=1
+while [ $n -le $ngrid ]; do
+	sleep 1s
+	if [ -f Prices$n.m ]; then
+		rm Prices${n}.m Prices${n}.txt
+	fi
+	cat PSimConlyPrices002.m | sed "s/repng/$n/g" > Prices$n.m
+	matrunnm Prices$n.m
+	sleep 2s
+	n=`expr $n + 1`
+done
+
+# sleep 60s
+# psrem=`qstat | grep price | grep -v ' dr '`
+# while [ ${#psrem} -gt 0 ]; do
+# 	sleep 10s
+# 	psrem=`qstat | grep price | grep -v ' dr '`
+# done
+

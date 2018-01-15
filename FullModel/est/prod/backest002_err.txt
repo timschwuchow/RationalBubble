@@ -1,0 +1,11 @@
+{??? Error: File:
+/afs/econ.duke.edu/data/bayerp/tim/ra/bayerroberts/flippers/002/est/prod/backest002.m
+Line: 63 Column: 47
+Unexpected MATLAB expression.
+} 
+{??? Error: File:
+/afs/econ.duke.edu/data/bayerp/tim/ra/bayerroberts/flippers/002/est/prod/backest002.m
+Line: 63 Column: 47
+Unexpected MATLAB expression.
+} 
+

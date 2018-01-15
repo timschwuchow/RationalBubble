@@ -1,0 +1,57 @@
+#!/bin/sh
+
+
+rm outmatlast/*
+rm statout/*
+mv ../../graphs_t1/* outmatlast
+mv outmat/* outmatlast
+matrun psimspecinit002.m
+sleep 2s
+runname=`qstat | grep psim`
+while [ ${#runname} -gt 0 ]; do
+	sleep 2s
+	runname=`qstat | grep psim`
+done
+sleep 5s
+ngrid=`cat nsprobnum | head -n 1 | sed "s/\([0-9]*\),\([0-9]*\)/\2/g"`
+n=1
+while [ $n -le $ngrid ]; do
+	./psimvfnsimmaster $n &
+	sleep 20s
+	n=`expr $n + 1`
+done
+
+sleep 60s
+vfrem=`qstat | grep vfss | grep -v ' dr '`
+rprem=`qstat | grep repp | grep -v ' dr '`
+while [ ${#vfrem} -gt 0 ] || [ ${#rprem} -gt 0 ]; do
+	sleep 10s
+	vfrem=`qstat | grep vfss | grep -v ' dr '`
+	rprem=`qstat | grep repp | grep -v ' dr '`
+done
+
+#
+# sleep 5s
+# rm vfss*.m
+n=1
+sleep 30s
+while [ $n -le $ngrid ]; do
+	cat psimspecgraph002.m | sed "s/repng/$n/g" > graph$n.m
+	sleep 2s
+	matrun graph$n.m
+	n=`expr $n + 1`
+# done
+grem=`qstat | grep graph`
+while [ ${#vfrem} -gt 0 ]; do
+	sleep 10s
+	grem=`qstat | grep graph | grep -v ' dr '`
+done
+
+
+matrun psimspecstats002.m
+
+
+
+
+
+

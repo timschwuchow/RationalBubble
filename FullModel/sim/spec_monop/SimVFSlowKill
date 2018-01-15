@@ -1,0 +1,8 @@
+#!/bin/bash
+
+killtime=`echo ${1%%.*} | sed 's/[^0-9]//g'`
+if [ -n $killtime ]; then
+	for vf in `qstat | egrep -i 'vf[0-9]* ' | grep ' r ' | awk '{print $3}'`; do test=`cat $vf.txt | tail -n 1 | awk '{print $6}'`; if [ ${#test} -ge 1 ]; then if [ ${test%%.*} -ge $killtime ]; then cat $vf.txt | tail -n 1; tsqdel " $vf "; fi; fi ; done
+else
+	echo "Needs an argument"
+fi

@@ -1,0 +1,847 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2010 The MathWorks, Inc.
+                Version 7.11.0.584 (R2010b) 64-bit (glnxa64)
+                              August 16, 2010
+
+{Warning: Name is nonexistent or not a directory:
+/opt/matlabR2010b/help/toolbox/dspblks/examples.} 
+{Warning: Name is nonexistent or not a directory:
+/opt/matlabR2010b/help/toolbox/commblks/examples.} 
+{Warning: Name is nonexistent or not a directory:
+/opt/matlabR2010b/help/toolbox/comm/examples.} 
+ 
+  To get started, type one of these: helpwin, helpdesk, or demo.
+  For product information, visit www.mathworks.com.
+ 
+ 
+ Iteration   Func-count     min f(x)         Procedure
+     0            1          2.57684         
+     1            5          2.54831         initial simplex
+     2            7          2.47317         contract outside
+     3            9          2.47317         contract inside
+     4           11          2.25357         reflect
+     5           17          2.25357         shrink
+     6           23          2.15109         shrink
+     7           24          2.15109         reflect
+     8           30          2.15109         shrink
+     9           32          2.15109         contract outside
+    10           38          2.15109         shrink
+    11           39          2.15109         reflect
+    12           40          2.15109         reflect
+    13           46          2.15109         shrink
+    14           47          2.15109         reflect
+    15           49          2.15109         contract outside
+    16           55          2.15109         shrink
+    17           56          2.15109         reflect
+    18           58          2.15109         contract inside
+    19           59          2.15109         reflect
+    20           61          2.15109         contract inside
+    21           62          2.15109         reflect
+    22           63          2.15109         reflect
+    23           69          2.15109         shrink
+    24           75          2.15109         shrink
+    25           76          2.15109         reflect
+    26           77          2.15109         reflect
+    27           78          2.15109         reflect
+    28           79          2.15109         reflect
+    29           80          2.15109         reflect
+    30           86          2.15109         shrink
+    31           87          2.15109         reflect
+    32           88          2.15109         reflect
+    33           94          2.15109         shrink
+    34           96          2.15109         contract inside
+    35          102          2.15109         shrink
+    36          103          2.15109         reflect
+    37          104          2.15109         reflect
+    38          105          2.15109         reflect
+    39          111          2.15109         shrink
+    40          117          2.15109         shrink
+    41          118          2.15109         reflect
+    42          119          2.15109         reflect
+    43          121          2.15109         contract outside
+    44          127          2.15109         shrink
+    45          128          2.15109         reflect
+    46          130          2.15109         contract inside
+    47          131          2.15109         reflect
+    48          133          2.15109         contract inside
+    49          135          2.15109         contract inside
+    50          136          2.15109         reflect
+    51          138          2.15109         contract inside
+    52          144          2.15109         shrink
+    53          145          2.15109         reflect
+    54          146          2.15109         reflect
+    55          147          2.15109         reflect
+    56          148          2.15109         reflect
+    57          149          2.15109         reflect
+    58          150          2.15109         reflect
+    59          156          2.15109         shrink
+    60          158          2.15109         contract inside
+    61          164          2.15109         shrink
+    62          170          2.15109         shrink
+    63          171          2.15109         reflect
+    64          173          2.15109         contract inside
+    65          174          2.15109         reflect
+    66          176          2.15109         contract outside
+    67          178          2.15109         contract inside
+    68          180          2.15109         contract inside
+    69          186          2.15109         shrink
+    70          187          2.15109         reflect
+    71          193          2.15109         shrink
+    72          195          2.15109         contract outside
+    73          196          2.15109         reflect
+    74          197          2.15109         reflect
+    75          198          2.15109         reflect
+    76          204          2.15109         shrink
+    77          210          2.15109         shrink
+    78          212          2.15109         contract inside
+    79          213          2.15109         reflect
+    80          219          2.15109         shrink
+    81          221          2.15109         contract inside
+    82          222          2.15109         reflect
+    83          223          2.15109         reflect
+    84          229          2.15109         shrink
+    85          230          2.15109         reflect
+    86          231          2.15109         reflect
+    87          232          2.15109         reflect
+    88          238          2.15109         shrink
+    89          240          2.15109         contract outside
+    90          242          2.15109         contract inside
+    91          244          2.15109         contract inside
+    92          250          2.15109         shrink
+    93          251          2.15109         reflect
+    94          257          2.15109         shrink
+    95          259          2.15109         contract outside
+    96          265          2.15109         shrink
+    97          266          2.15109         reflect
+    98          268          2.15109         contract outside
+    99          274          2.15109         shrink
+   100          275          2.15109         reflect
+   101          276          2.15109         reflect
+   102          278          2.15109         contract outside
+   103          284          2.15109         shrink
+   104          285          2.15109         reflect
+   105          286          2.15109         reflect
+   106          292          2.15109         shrink
+   107          293          2.15109         reflect
+   108          294          2.15109         reflect
+   109          296          2.15109         contract inside
+   110          298          2.15109         contract inside
+   111          300          2.15109         contract inside
+   112          302          2.15109         contract inside
+   113          308          2.15109         shrink
+   114          310          2.15109         contract outside
+   115          312          2.15109         contract inside
+   116          318          2.15109         shrink
+   117          320          2.15109         contract inside
+   118          326          2.15109         shrink
+   119          327          2.15109         reflect
+   120          328          2.15109         reflect
+   121          334          2.15109         shrink
+   122          335          2.15109         reflect
+   123          336          2.15109         reflect
+   124          337          2.15109         reflect
+   125          343          2.15109         shrink
+   126          345          2.15109         contract inside
+   127          346          2.15109         reflect
+   128          347          2.15109         reflect
+   129          353          2.15109         shrink
+   130          354          2.15109         reflect
+   131          356          2.15109         contract inside
+   132          358          2.15109         contract inside
+   133          360          2.15109         contract inside
+   134          361          2.15109         reflect
+   135          367          2.15109         shrink
+   136          368          2.15109         reflect
+   137          369          2.15109         reflect
+   138          370          2.15109         reflect
+   139          371          2.15109         reflect
+   140          372          2.15109         reflect
+   141          373          2.15109         reflect
+   142          379          2.15109         shrink
+   143          380          2.15109         reflect
+   144          381          2.15109         reflect
+   145          383          2.15109         contract outside
+   146          389          2.15109         shrink
+   147          390          2.15109         reflect
+   148          396          2.15109         shrink
+   149          402          2.15109         shrink
+   150          403          2.15109         reflect
+   151          409          2.15109         shrink
+   152          410          2.15109         reflect
+   153          416          2.15109         shrink
+   154          418          2.15109         contract inside
+   155          419          2.15109         reflect
+   156          420          2.15109         reflect
+   157          426          2.15109         shrink
+   158          427          2.15109         reflect
+   159          428          2.15109         reflect
+   160          434          2.15109         shrink
+   161          435          2.15109         reflect
+   162          436          2.15109         reflect
+   163          437          2.15109         reflect
+   164          439          2.15109         contract inside
+   165          441          2.15109         contract inside
+   166          447          2.15109         shrink
+   167          453          2.15109         shrink
+   168          459          2.15109         shrink
+   169          460          2.15109         reflect
+   170          462          2.15109         contract inside
+   171          468          2.15109         shrink
+   172          470          2.15109         contract outside
+   173          471          2.15109         reflect
+   174          473          2.15109         contract inside
+   175          474          2.15109         reflect
+   176          475          2.15109         reflect
+   177          477          2.15109         contract inside
+   178          479          2.15109         contract inside
+   179          485          2.15109         shrink
+   180          486          2.15109         reflect
+   181          487          2.15109         reflect
+   182          488          2.15109         reflect
+   183          494          2.15109         shrink
+   184          496          2.15109         contract inside
+   185          497          2.15109         reflect
+   186          503          2.15109         shrink
+   187          504          2.15109         reflect
+   188          505          2.15109         reflect
+   189          506          2.15109         reflect
+   190          508          2.15109         contract inside
+   191          514          2.15109         shrink
+   192          515          2.15109         reflect
+   193          517          2.15109         contract inside
+   194          523          2.15109         shrink
+   195          524          2.15109         reflect
+   196          525          2.15109         reflect
+   197          531          2.15109         shrink
+   198          533          2.15109         contract inside
+   199          535          2.15109         contract outside
+   200          541          2.15109         shrink
+   201          542          2.15109         reflect
+   202          548          2.15109         shrink
+   203          550          2.15109         contract outside
+   204          552          2.15109         contract outside
+   205          553          2.15109         reflect
+   206          559          2.15109         shrink
+   207          560          2.15109         reflect
+   208          566          2.15109         shrink
+   209          572          2.15109         shrink
+   210          574          2.15109         contract outside
+   211          580          2.15109         shrink
+   212          582          2.15109         contract outside
+   213          583          2.15109         reflect
+   214          584          2.15109         reflect
+   215          590          2.15109         shrink
+   216          596          2.15109         shrink
+   217          602          2.15109         shrink
+   218          603          2.15109         reflect
+   219          604          2.15109         reflect
+   220          605          2.15109         reflect
+   221          611          2.15109         shrink
+   222          612          2.15109         reflect
+   223          618          2.15109         shrink
+   224          619          2.15109         reflect
+   225          621          2.15109         contract inside
+   226          627            2.024         shrink
+   227          628            2.024         reflect
+   228          629            2.024         reflect
+   229          631            2.024         contract outside
+   230          632            2.024         reflect
+   231          634            2.024         contract inside
+   232          636            2.024         contract inside
+   233          642            2.024         shrink
+   234          643            2.024         reflect
+   235          649            2.024         shrink
+   236          651            2.024         contract inside
+   237          653            2.024         contract inside
+   238          659            2.024         shrink
+   239          660            2.024         reflect
+   240          662            2.024         contract inside
+   241          663            2.024         reflect
+   242          665            2.024         contract inside
+   243          671            2.024         shrink
+   244          672            2.024         reflect
+   245          678            2.024         shrink
+   246          679            2.024         reflect
+   247          685            2.024         shrink
+   248          686            2.024         reflect
+   249          687            2.024         reflect
+   250          688            2.024         reflect
+   251          694            2.024         shrink
+   252          695            2.024         reflect
+   253          701            2.024         shrink
+   254          703            2.024         contract outside
+   255          709            2.024         shrink
+   256          710            2.024         reflect
+   257          711            2.024         reflect
+   258          712            2.024         reflect
+   259          713            2.024         reflect
+   260          719            2.024         shrink
+   261          721            2.024         contract inside
+   262          723            2.024         contract outside
+   263          724            2.024         reflect
+   264          725            2.024         reflect
+   265          727            2.024         contract inside
+   266          728            2.024         reflect
+   267          730            2.024         contract inside
+   268          732            2.024         contract inside
+   269          738            2.024         shrink
+   270          744            2.024         shrink
+   271          745            2.024         reflect
+   272          747            2.024         contract outside
+   273          753            2.024         shrink
+   274          754            2.024         reflect
+   275          760            2.024         shrink
+   276          762            2.024         contract outside
+   277          768            2.024         shrink
+   278          769            2.024         reflect
+   279          775            2.024         shrink
+   280          777            2.024         contract inside
+   281          778            2.024         reflect
+   282          784            2.024         shrink
+   283          785            2.024         reflect
+   284          786            2.024         reflect
+   285          787            2.024         reflect
+   286          788            2.024         reflect
+   287          790            2.024         contract outside
+   288          791            2.024         reflect
+   289          797            2.024         shrink
+   290          798            2.024         reflect
+   291          799            2.024         reflect
+   292          801            2.024         contract inside
+   293          807            2.024         shrink
+   294          808            2.024         reflect
+   295          809            2.024         reflect
+   296          810            2.024         reflect
+   297          811            2.024         reflect
+   298          817            2.024         shrink
+   299          818            2.024         reflect
+   300          820            2.024         contract inside
+   301          821            2.024         reflect
+   302          822            2.024         reflect
+   303          828            2.024         shrink
+   304          830            2.024         contract inside
+   305          831            2.024         reflect
+   306          832            2.024         reflect
+   307          833            2.024         reflect
+   308          839            2.024         shrink
+   309          841            2.024         contract inside
+   310          842            2.024         reflect
+   311          848            2.024         shrink
+   312          849            2.024         reflect
+   313          850            2.024         reflect
+   314          856            2.024         shrink
+   315          857            2.024         reflect
+   316          858            2.024         reflect
+   317          859            2.024         reflect
+   318          860            2.024         reflect
+   319          866            2.024         shrink
+   320          867            2.024         reflect
+   321          868            2.024         reflect
+   322          869            2.024         reflect
+   323          871            2.024         contract inside
+   324          872            2.024         reflect
+   325          878            2.024         shrink
+   326          884            2.024         shrink
+   327          885            2.024         reflect
+   328          886            2.024         reflect
+   329          892            2.024         shrink
+   330          893            2.024         reflect
+   331          894            2.024         reflect
+   332          895            2.024         reflect
+   333          896            2.024         reflect
+   334          898            2.024         contract inside
+   335          899            2.024         reflect
+   336          901            2.024         contract inside
+   337          903            2.024         contract inside
+   338          904            2.024         reflect
+   339          910            2.024         shrink
+   340          911            2.024         reflect
+   341          917            2.024         shrink
+   342          918            2.024         reflect
+   343          920            2.024         contract inside
+   344          921            2.024         reflect
+   345          927            2.024         shrink
+   346          928            2.024         reflect
+   347          929            2.024         reflect
+   348          935            2.024         shrink
+   349          936            2.024         reflect
+   350          938            2.024         contract inside
+   351          939            2.024         reflect
+   352          940            2.024         reflect
+   353          946            2.024         shrink
+   354          947            2.024         reflect
+   355          948            2.024         reflect
+   356          950            2.024         contract inside
+   357          952            2.024         contract inside
+   358          958            2.024         shrink
+   359          959            2.024         reflect
+   360          961            2.024         contract inside
+   361          962            2.024         reflect
+   362          968            2.024         shrink
+   363          969            2.024         reflect
+   364          970            2.024         reflect
+   365          971            2.024         reflect
+   366          973            2.024         contract inside
+   367          975            2.024         contract inside
+   368          981            2.024         shrink
+   369          987            2.024         shrink
+   370          988            2.024         reflect
+   371          989            2.024         reflect
+   372          991            2.024         contract outside
+   373          993            2.024         contract inside
+   374          999            2.024         shrink
+   375         1001            2.024         contract inside
+   376         1007            2.024         shrink
+   377         1013            2.024         shrink
+   378         1015            2.024         contract outside
+   379         1021            2.024         shrink
+   380         1027            2.024         shrink
+   381         1029            2.024         contract inside
+   382         1035            2.024         shrink
+   383         1036            2.024         reflect
+   384         1042            2.024         shrink
+   385         1048            2.024         shrink
+   386         1050            2.024         contract inside
+   387         1051            2.024         reflect
+   388         1052            2.024         reflect
+   389         1058            2.024         shrink
+   390         1059            2.024         reflect
+   391         1061            2.024         contract outside
+   392         1067            2.024         shrink
+   393         1068            2.024         reflect
+   394         1070            2.024         contract inside
+   395         1076            2.024         shrink
+   396         1078            2.024         contract outside
+   397         1079            2.024         reflect
+   398         1080            2.024         reflect
+   399         1086            2.024         shrink
+   400         1087            2.024         reflect
+   401         1093            2.024         shrink
+   402         1094            2.024         reflect
+   403         1095            2.024         reflect
+   404         1096            2.024         reflect
+   405         1098            2.024         contract inside
+   406         1100            2.024         contract inside
+   407         1106            2.024         shrink
+   408         1107            2.024         reflect
+   409         1108            2.024         reflect
+   410         1110            2.024         contract inside
+   411         1111            2.024         reflect
+   412         1112            2.024         reflect
+   413         1118            2.024         shrink
+   414         1120            2.024         contract inside
+   415         1126            2.024         shrink
+   416         1127            2.024         reflect
+   417         1128            2.024         reflect
+   418         1129            2.024         reflect
+   419         1135            2.024         shrink
+   420         1136            2.024         reflect
+   421         1137            2.024         reflect
+   422         1138            2.024         reflect
+   423         1139            2.024         reflect
+   424         1141            2.024         contract inside
+   425         1143            2.024         contract inside
+   426         1149            2.024         shrink
+   427         1151            2.024         contract inside
+   428         1152            2.024         reflect
+   429         1154            2.024         contract outside
+   430         1156            2.024         contract inside
+   431         1158            2.024         contract inside
+   432         1164            2.024         shrink
+   433         1166            2.024         contract outside
+   434         1167            2.024         reflect
+   435         1169            2.024         contract outside
+   436         1175            2.024         shrink
+   437         1181            2.024         shrink
+   438         1182            2.024         reflect
+   439         1184            2.024         contract inside
+   440         1186            2.024         contract inside
+   441         1192            2.024         shrink
+   442         1194            2.024         contract outside
+   443         1195            2.024         reflect
+   444         1197            2.024         contract inside
+   445         1199            2.024         contract inside
+   446         1205            2.024         shrink
+   447         1206            2.024         reflect
+   448         1208            2.024         contract outside
+   449         1214            2.024         shrink
+   450         1215            2.024         reflect
+   451         1217            2.024         contract inside
+   452         1218            2.024         reflect
+   453         1224            2.024         shrink
+   454         1225            2.024         reflect
+   455         1226            2.024         reflect
+   456         1227            2.024         reflect
+   457         1228            2.024         reflect
+   458         1234            2.024         shrink
+   459         1235            2.024         reflect
+   460         1237            2.024         contract inside
+   461         1238            2.024         reflect
+   462         1244            2.024         shrink
+   463         1245            2.024         reflect
+   464         1246            2.024         reflect
+   465         1247            2.024         reflect
+   466         1249            2.024         contract inside
+   467         1255            2.024         shrink
+   468         1256            2.024         reflect
+   469         1262            2.024         shrink
+   470         1263            2.024         reflect
+   471         1265            2.024         contract inside
+   472         1267            2.024         contract inside
+   473         1269            2.024         contract outside
+   474         1275            2.024         shrink
+   475         1281            2.024         shrink
+   476         1287            2.024         shrink
+   477         1288            2.024         reflect
+   478         1289            2.024         reflect
+   479         1290            2.024         reflect
+   480         1291            2.024         reflect
+   481         1297            2.024         shrink
+   482         1298            2.024         reflect
+   483         1299            2.024         reflect
+   484         1301            2.024         contract inside
+   485         1303            2.024         contract inside
+   486         1305            2.024         contract inside
+   487         1311            2.024         shrink
+   488         1313            2.024         contract inside
+   489         1314            2.024         reflect
+   490         1320            2.024         shrink
+   491         1321            2.024         reflect
+   492         1322            2.024         reflect
+   493         1324            2.024         contract inside
+   494         1330            2.024         shrink
+   495         1331            2.024         reflect
+   496         1333            2.024         contract inside
+   497         1334            2.024         reflect
+   498         1335            2.024         reflect
+   499         1341            2.024         shrink
+   500         1343            2.024         contract outside
+   501         1345            2.024         contract outside
+   502         1346            2.024         reflect
+   503         1348            2.024         contract inside
+   504         1350            2.024         contract inside
+   505         1351            2.024         reflect
+   506         1357            2.024         shrink
+   507         1358            2.024         reflect
+   508         1359            2.024         reflect
+   509         1365            2.024         shrink
+   510         1366            2.024         reflect
+   511         1368            2.024         contract outside
+   512         1369            2.024         reflect
+   513         1370            2.024         reflect
+   514         1376            2.024         shrink
+   515         1377            2.024         reflect
+   516         1378            2.024         reflect
+   517         1379            2.024         reflect
+   518         1381            2.024         contract outside
+   519         1382            2.024         reflect
+   520         1383            2.024         reflect
+   521         1384            2.024         reflect
+   522         1390            2.024         shrink
+   523         1396            2.024         shrink
+   524         1398            2.024         contract outside
+   525         1399            2.024         reflect
+   526         1405            2.024         shrink
+   527         1411            2.024         shrink
+   528         1417            2.024         shrink
+   529         1423            2.024         shrink
+   530         1424            2.024         reflect
+   531         1426            2.024         contract inside
+   532         1428            2.024         contract inside
+   533         1434            2.024         shrink
+   534         1436            2.024         contract outside
+   535         1438            2.024         contract inside
+   536         1439            2.024         reflect
+   537         1445            2.024         shrink
+   538         1446            2.024         reflect
+   539         1452            2.024         shrink
+   540         1454            2.024         contract inside
+   541         1455            2.024         reflect
+   542         1461            2.024         shrink
+   543         1462            2.024         reflect
+   544         1463            2.024         reflect
+   545         1465            2.024         contract inside
+   546         1466            2.024         reflect
+   547         1472            2.024         shrink
+   548         1473            2.024         reflect
+   549         1479            2.024         shrink
+   550         1480            2.024         reflect
+   551         1482            2.024         contract inside
+   552         1488            2.024         shrink
+   553         1489            2.024         reflect
+   554         1495            2.024         shrink
+   555         1501            2.024         shrink
+   556         1502            2.024         reflect
+   557         1504            2.024         contract inside
+   558         1510            2.024         shrink
+   559         1511            2.024         reflect
+   560         1512            2.024         reflect
+   561         1513            2.024         reflect
+   562         1514            2.024         reflect
+   563         1515            2.024         reflect
+   564         1516            2.024         reflect
+   565         1517            2.024         reflect
+   566         1523            2.024         shrink
+   567         1524            2.024         reflect
+   568         1526            2.024         contract inside
+   569         1532            2.024         shrink
+   570         1533            2.024         reflect
+   571         1534            2.024         reflect
+   572         1535            2.024         reflect
+   573         1536            2.024         reflect
+   574         1542            2.024         shrink
+   575         1543            2.024         reflect
+   576         1544            2.024         reflect
+   577         1550            2.024         shrink
+   578         1551            2.024         reflect
+   579         1553            2.024         contract inside
+   580         1554            2.024         reflect
+   581         1560            2.024         shrink
+   582         1562            2.024         contract inside
+   583         1564            2.024         contract outside
+   584         1570            2.024         shrink
+   585         1571            2.024         reflect
+   586         1572            2.024         reflect
+   587         1578            2.024         shrink
+   588         1579            2.024         reflect
+   589         1581            2.024         contract outside
+   590         1587            2.024         shrink
+   591         1589            2.024         contract inside
+   592         1595            2.024         shrink
+   593         1596            2.024         reflect
+   594         1602            2.024         shrink
+   595         1603            2.024         reflect
+   596         1604            2.024         reflect
+   597         1610            2.024         shrink
+   598         1611            2.024         reflect
+   599         1612            2.024         reflect
+   600         1618            2.024         shrink
+   601         1624            2.024         shrink
+   602         1625            2.024         reflect
+   603         1627            2.024         contract outside
+   604         1629            2.024         contract inside
+   605         1635            2.024         shrink
+   606         1636            2.024         reflect
+   607         1637            2.024         reflect
+   608         1638            2.024         reflect
+   609         1644            2.024         shrink
+   610         1645            2.024         reflect
+   611         1646            2.024         reflect
+   612         1652            2.024         shrink
+   613         1653            2.024         reflect
+   614         1659            2.024         shrink
+   615         1665            2.024         shrink
+   616         1666            2.024         reflect
+   617         1667            2.024         reflect
+   618         1668            2.024         reflect
+   619         1674            2.024         shrink
+   620         1675            2.024         reflect
+   621         1676            2.024         reflect
+   622         1677            2.024         reflect
+   623         1683            2.024         shrink
+   624         1684            2.024         reflect
+   625         1690            2.024         shrink
+   626         1691            2.024         reflect
+   627         1692            2.024         reflect
+   628         1698            2.024         shrink
+   629         1699            2.024         reflect
+   630         1705            2.024         shrink
+   631         1706            2.024         reflect
+   632         1708            2.024         contract inside
+   633         1710            2.024         contract outside
+   634         1716            2.024         shrink
+   635         1717            2.024         reflect
+   636         1723            2.024         shrink
+   637         1724            2.024         reflect
+   638         1725            2.024         reflect
+   639         1731            2.024         shrink
+   640         1732            2.024         reflect
+   641         1733            2.024         reflect
+   642         1734            2.024         reflect
+   643         1740            2.024         shrink
+   644         1742            2.024         contract outside
+   645         1743            2.024         reflect
+   646         1745            2.024         contract inside
+   647         1746            2.024         reflect
+   648         1752            2.024         shrink
+   649         1753            2.024         reflect
+   650         1759            2.024         shrink
+   651         1760            2.024         reflect
+   652         1761            2.024         reflect
+   653         1763            2.024         contract outside
+   654         1765            2.024         contract inside
+   655         1767            2.024         contract inside
+   656         1773            2.024         shrink
+   657         1774            2.024         reflect
+   658         1776            2.024         contract inside
+   659         1782            2.024         shrink
+   660         1783            2.024         reflect
+   661         1785            2.024         contract inside
+   662         1786            2.024         reflect
+   663         1788            2.024         contract outside
+   664         1789            2.024         reflect
+   665         1795            2.024         shrink
+   666         1796            2.024         reflect
+   667         1798            2.024         contract inside
+   668         1800            2.024         contract inside
+   669         1802            2.024         contract inside
+   670         1804            2.024         contract inside
+   671         1805            2.024         reflect
+   672         1806            2.024         reflect
+   673         1812            2.024         shrink
+   674         1818            2.024         shrink
+   675         1819            2.024         reflect
+   676         1820            2.024         reflect
+   677         1821            2.024         reflect
+   678         1823            2.024         contract inside
+   679         1824            2.024         reflect
+   680         1830            2.024         shrink
+   681         1831            2.024         reflect
+   682         1832            2.024         reflect
+   683         1833            2.024         reflect
+   684         1835            2.024         contract inside
+   685         1841            2.024         shrink
+   686         1842            2.024         reflect
+   687         1848            2.024         shrink
+   688         1854            2.024         shrink
+   689         1855            2.024         reflect
+   690         1856            2.024         reflect
+   691         1862            2.024         shrink
+   692         1864            2.024         contract inside
+   693         1866            2.024         contract inside
+   694         1872            2.024         shrink
+   695         1873            2.024         reflect
+   696         1879            2.024         shrink
+   697         1881            2.024         contract inside
+   698         1882            2.024         reflect
+   699         1888            2.024         shrink
+   700         1889            2.024         reflect
+   701         1895            2.024         shrink
+   702         1896            2.024         reflect
+   703         1902            2.024         shrink
+   704         1908            2.024         shrink
+   705         1910            2.024         contract outside
+   706         1911            2.024         reflect
+   707         1912            2.024         reflect
+   708         1918            2.024         shrink
+   709         1919            2.024         reflect
+   710         1920            2.024         reflect
+   711         1922            2.024         contract inside
+   712         1928            2.024         shrink
+   713         1930            2.024         contract inside
+   714         1931            2.024         reflect
+   715         1937            2.024         shrink
+   716         1943            2.024         shrink
+   717         1944            2.024         reflect
+   718         1950            2.024         shrink
+   719         1951            2.024         reflect
+   720         1957            2.024         shrink
+   721         1958            2.024         reflect
+   722         1959            2.024         reflect
+   723         1960            2.024         reflect
+   724         1966            2.024         shrink
+   725         1967            2.024         reflect
+   726         1968            2.024         reflect
+   727         1974            2.024         shrink
+   728         1980            2.024         shrink
+   729         1981            2.024         reflect
+   730         1983            2.024         contract outside
+   731         1985            2.024         contract outside
+   732         1987            2.024         contract inside
+   733         1993            2.024         shrink
+   734         1995            2.024         contract inside
+   735         1996            2.024         reflect
+   736         1998            2.024         contract inside
+   737         2004            2.024         shrink
+   738         2005            2.024         reflect
+   739         2007            2.024         contract outside
+   740         2008            2.024         reflect
+   741         2009            2.024         reflect
+   742         2011            2.024         contract inside
+   743         2017            2.024         shrink
+   744         2018            2.024         reflect
+   745         2020            2.024         contract inside
+   746         2021            2.024         reflect
+   747         2022            2.024         reflect
+   748         2028            2.024         shrink
+   749         2029            2.024         reflect
+   750         2030            2.024         reflect
+   751         2031            2.024         reflect
+   752         2032            2.024         reflect
+   753         2033            2.024         reflect
+   754         2034            2.024         reflect
+   755         2040            2.024         shrink
+   756         2041            2.024         reflect
+   757         2042            2.024         reflect
+   758         2044            2.024         contract inside
+   759         2050            2.024         shrink
+   760         2051            2.024         reflect
+   761         2052            2.024         reflect
+   762         2053            2.024         reflect
+   763         2054            2.024         reflect
+   764         2056            2.024         contract inside
+   765         2057            2.024         reflect
+   766         2063            2.024         shrink
+   767         2065            2.024         contract outside
+   768         2066            2.024         reflect
+   769         2072            2.024         shrink
+   770         2078            2.024         shrink
+   771         2080            2.024         contract inside
+   772         2081            2.024         reflect
+   773         2082            2.024         reflect
+   774         2088            2.024         shrink
+   775         2089            2.024         reflect
+   776         2090            2.024         reflect
+   777         2092            2.024         contract inside
+   778         2098            2.024         shrink
+   779         2099            2.024         reflect
+   780         2100            2.024         reflect
+   781         2101            2.024         reflect
+   782         2102            2.024         reflect
+   783         2103            2.024         reflect
+   784         2105            2.024         contract inside
+   785         2111            2.024         shrink
+   786         2112            2.024         reflect
+   787         2114            2.024         contract inside
+   788         2115            2.024         reflect
+   789         2116            2.024         reflect
+   790         2118            2.024         contract inside
+   791         2124            2.024         shrink
+   792         2125            2.024         reflect
+   793         2126            2.024         reflect
+   794         2132            2.024         shrink
+   795         2138            2.024         shrink
+   796         2139            2.024         reflect
+   797         2145            2.024         shrink
+   798         2151            2.024         shrink
+   799         2152            2.024         reflect
+   800         2153            2.024         reflect
+ 
+Exiting: Maximum number of iterations has been exceeded
+         - increase MaxIter option.
+         Current function value: 2.023996 
+
+
+ans =
+
+  Columns 1 through 6
+
+      0.68096      0.32081      0.21817      0.14589     0.099882     0.057957
+      0.86396      0.71547      0.68555      0.62797      0.46021       0.3055
+
+  Columns 7 through 12
+
+     0.026838     0.012198    0.0053216  -0.00078837    -0.010431    -0.029681
+      0.25303      0.15654    -0.064497     -0.26064     -0.34467     -0.33327
+
+  Columns 13 through 18
+
+    -0.049502    -0.049837    -0.055476    -0.070148    -0.064405    -0.057187
+     -0.39946     -0.53513     -0.53596     -0.44824     -0.45818     -0.54944
+
+  Columns 19 through 20
+
+    -0.060589    -0.058334
+     -0.48455     -0.30293
+

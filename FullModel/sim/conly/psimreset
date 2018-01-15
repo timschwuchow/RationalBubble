@@ -1,0 +1,4 @@
+#!/bin/sh 
+
+rm vfss* repp* out1/*mat out1/*jpg outmat/*mat nsprobnum nohup.out *.txt *~ impulse* price* 2>/dev/null 
+

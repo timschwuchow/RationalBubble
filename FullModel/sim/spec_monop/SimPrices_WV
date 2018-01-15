@@ -1,0 +1,25 @@
+#!/bin/sh
+
+command=matrun
+if [ $# -ge 1 ]; then
+	opt=$@
+fi
+
+simlist=`ls outmat/pol* | sed 's/.*pol\([0-9]*\).mat/\1/g'`
+for sim in $simlist; do
+	cat PSimPrices002_WV.m | sed "s/repng/$sim/g" > Prices${sim}.m
+	$command Prices${sim}.m $opt
+	sleep 0.2s
+done
+
+# ngrid=`cat nsprobnum | head -n 1 | sed "s/\([0-9]*\),\([0-9]*\)/\2/g"`
+# n=1
+# while [ $n -le $ngrid ]; do
+# 	cat PSimPrices002.m | sed "s/repng/$n/g" > Price$n.m
+# 	matrunnm Price$n.m
+# 	sleep 2s
+# 	n=`expr $n + 1`
+# done
+
+
+

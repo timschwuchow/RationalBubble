@@ -1,0 +1,40 @@
+#!/bin/sh
+
+command=matrun
+if [ $# -ge 1 ]; then
+	opt=$@
+fi
+
+simlist=`ls outmat/pol* | sed 's/.*pol\([0-9]*\).mat/\1/g'`
+for sim in $simlist; do
+	if [ -f outgraph/policy${sim}.jpg ]; then 
+		echo "Policy function $sim already graphed"
+	else
+		cat PolGraph002.m | sed "s/repng/$sim/g" > Policy${sim}.m
+		$command Policy${sim}.m $opt
+		sleep 0.2s
+	fi 
+done
+
+sleep 5s
+
+while [ `qstat | grep Policy | wc -l` -gt 0 ]; do
+	sleep 20s
+done
+
+rm Policy*
+
+
+
+
+# ngrid=`cat nsprobnum | head -n 1 | sed "s/\([0-9]*\),\([0-9]*\)/\2/g"`
+# n=1
+# while [ $n -le $ngrid ]; do
+# 	cat PSimPrices002.m | sed "s/repng/$n/g" > Price$n.m
+# 	matrunnm Price$n.m
+# 	sleep 2s
+# 	n=`expr $n + 1`
+# done
+
+
+

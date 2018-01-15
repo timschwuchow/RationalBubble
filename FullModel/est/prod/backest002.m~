@@ -1,0 +1,74 @@
+%  Copyright 2012 Timothy John Schwuchow
+%  backest002.m		-	Find parameters that most closely match price difference correlation structure.
+clear all
+format short g
+path(path,'../../functions');
+path(path,'../../functions/tests');
+%  Control parameters
+
+seed 	=	11;
+T		=	5000;
+x		=	1;
+H		=	0.5;
+N		=	1;
+lags	=	[1:12];
+%  Simulation parameters
+b		=	0.99;
+
+%  Optimization parameters
+lb		=	[0.0001 0.0001 0.001 0.001];
+ub		=	[100 100 0.999 0.999];
+pg		=	[2 15 0.98 0.6];
+algo	=	'interior-point';
+disp	=	'iter';
+tolf	=	1e-12;
+tolx	=	1e-12;
+mfev	=	10000;
+vlist	=	{'ve','vg','re','rg'};
+elist	=	{'ve','vg','re','rg'};
+ew		=	1;
+randn('state',seed);
+
+
+varsch		=	[];
+varfix		=	[];
+for i=1:numel(vlist)
+	k	=	strmatch(vlist{i},elist);
+	if isempty(k)
+		varfix	=	[varfix i];
+	else
+		varsch	=	[varsch i];
+	end
+end
+
+
+%  Import and estimate regressions on actual data.
+datin								=	csvread('../../../data/flipmergeouttot001.csv');
+pt									=	datin(:,1)';
+[tdpreg tdpcor]				=	pricereggen002(pt,lags);
+param								=	pg;
+%  [param fval]					=	fmincon(@(param) backestobj002(param,b,T,H,N,x,lags,tdpcor), pg(varsch),[1 -1 0 0],[-0.1],[],[],lb(varsch),ub(varsch),[],optimset('Display', disp, 'Algorithm', algo, 'TolFun', tolf,'MaxFunEvals', mfev, 'TolX',tolx));
+
+[param fval]					=	fminsearch(@(param) backestobj002(param,b,T,H,N,x,lags,tdpcor), pg(varsch),optimset('Display', disp, 'TolFun', tolf,'MaxFunEvals', mfev, 'TolX',tolx));
+
+
+
+[p eta delta inno]			=	pricesim002(param,b,T,H,N,x);
+[tdpreg tdpcor]				=	pricereggen002(pt,lags);
+[dpreg dpcor]					=	pricereggen002(p,lags);
+[dpcor;tdpcor]
+
+backtab		=	fopen('../../tables/backest.tex','w');
+
+fprintf(backtab,['\\begin{tabular}{c c c c | ' repmat(' c ',[1 numel(lags)]) '} \n']);
+lagstr	=	[];
+for lg=lags
+	lagstr	=	[lagstr ' & $\\hat{\\rho}_{' int2str(lg) '}$ '];
+end
+fprintf(backtab,['$\\sigma_\\eta^2$ & $\\sigma_\\gamma^2$ & $\\rho_\\eta$ & $\\rho_\\gamma$' lagstr  ' \\\\ \\hline \n']);
+fprintf(backtab, ['\\multicolumn{4}{c|}{Actual Data}' repmat(' & %5.3f ',1,numel(lags)) '\\\\ \n'],tdpcor);
+fprintf(backtab, [' %5.3f & %5.3f & %5.3f & %5.3f ' repmat(' & %5.3f ',1,numel(lags)) '\\\\ \\hline \\hline \n'],[param dpcor]);
+fprintf(backtab,'\\end{tabular} \n');
+fclose(backtab);
+
+quit

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for vf in `ls VF*txt | sed 's/\(VF[0-9]*\)\.txt/\1/g'`; do
+	jinfo=`qstat | grep -i " $vf " | grep ' r ' | awk '{print $1,$8}'` 
+	jid=`echo $jinfo | sed 's/\([^ ]*\)[ ]*\(.*\)/\1/g'`
+	comp=`echo $jinfo | sed 's/\([^ ]*\)[ ]*\(.*\)/\2/g'`
+	echo "$vf || `cat $vf.txt | tail -n 1` || Max. Mem. `qstat -j $jid | grep usage | sed 's/.*maxvmem=\([^ ]*\).*/\1/g'` || Node $comp"
+done
+echo -e "Finished || `ls outmat/pol* 2>/dev/null | wc -l` \nRunning || `qstat | egrep -i ' vf[0-9]* ' | grep ' r ' | wc -l`\nQueued || `qstat | egrep -i ' vf[0-9]* ' | grep  ' qw ' | wc -l`\n All || `cat nsp* | sed 's/[^,]*,\(.*\)/\1\n/g'`"
+
+

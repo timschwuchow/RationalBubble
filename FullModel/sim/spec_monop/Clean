@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rm outcsv/* outmat/* outfiles/* outgraph/* *txt nohup.out nsprobnum VF* Prices* Imp* Policy* 2>/dev/null

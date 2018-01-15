@@ -1,0 +1,32 @@
+#!/bin/sh
+
+ngrid=`cat nsprobnum | head -n 1 | sed "s/\([0-9]*\),\([0-9]*\)/\2/g"`
+n=1
+command=matrun
+flist=''
+while [ $n -le $ngrid ]; do
+	if [ ! -f outmat/pol$n.mat ]; then
+		test1=`qstat | grep " VF${n} " | egrep ' r  |  qw ' | wc -l`
+		if [ $test1 -eq 0 ]; then
+			if [ -f VF${n}.txt ]; then
+				rm VF${n}.txt
+			fi
+			cat PSimVF002.m | sed "s/repng/$n/g" > VF$n.m
+			$command VF$n.m $@ >/dev/null
+			echo "Running VF${n}"
+			sleep 10.0s
+		else
+			echo "VF$n already running"
+		fi
+	else
+		echo "VF${n} is already finished"
+# 		mv VF${n}* outfiles
+	fi
+	n=`expr $n + 1`
+done
+sleep 10s
+
+while [ `qstat | grep -i VF | wc -l` -gt 0 ]; do
+	sleep 5m
+done
+rm VF*

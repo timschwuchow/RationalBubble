@@ -1,0 +1,34 @@
+#!/bin/sh
+
+
+command=matrun
+if [ $# -ge 1 ]; then
+	opt=$@
+fi 
+ 
+  
+simlist=`ls outmat/pol* | sed 's/.*pol\([0-9]*\).mat/\1/g'`
+for sim in $simlist; do
+	if [ -f outgraph/posimpulse${sim}.jpg ]; then 
+		echo "Impulse graphs for $sim already complete"
+	else
+		cat PSimImpulse002.m | sed "s/repng/$sim/g" > Impulse${sim}.m
+		$command Impulse${sim}.m $opt
+		sleep 0.2s
+	fi 
+done
+sleep 5s 
+
+while [ `qstat | grep -i Impulse | wc -l` -gt 0 ]; do 
+	sleep 20s
+done 
+
+rm Impulse* 
+
+# while [ $n -le $ngrid ]; do
+# 	cat PSimImpulse002.m | sed "s/repng/$n/g" > Impulse$n.m
+# 	matrunnm Impulse$n.m
+# 	sleep 2s
+# 	n=`expr $n + 1`
+# done
+#
